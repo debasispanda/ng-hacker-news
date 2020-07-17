@@ -1,0 +1,17 @@
+mat-table {
+  mat-header-row {
+    background-color: #ff6600;
+
+    mat-header-cell,
+    mat-cell {
+      color: #fff;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+
+  mat-header-cell:last-of-type,
+  mat-cell:last-of-type {
+    flex: 5;
+  }
+}

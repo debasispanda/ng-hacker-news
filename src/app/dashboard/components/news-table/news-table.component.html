@@ -1,0 +1,34 @@
+<mat-table [dataSource]="dataSource">
+    <!-- Comments Column -->
+    <ng-container matColumnDef="num_comments">
+        <mat-header-cell *matHeaderCellDef> Comments </mat-header-cell>
+        <mat-cell *matCellDef="let news"> {{news.num_comments}} </mat-cell>
+    </ng-container>
+
+    <!-- Vote Count Column -->
+    <ng-container matColumnDef="points">
+        <mat-header-cell *matHeaderCellDef> Vote Count </mat-header-cell>
+        <mat-cell *matCellDef="let news"> {{news.points}} </mat-cell>
+    </ng-container>
+
+    <!-- Upvote Column -->
+    <ng-container matColumnDef="icon">
+        <mat-header-cell *matHeaderCellDef> Upvote </mat-header-cell>
+        <mat-cell *matCellDef="let news">
+            <button mat-icon-button aria-label="upvote">
+                <mat-icon>arrow_drop_up</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    <!-- News Details Column -->
+    <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> News Details </mat-header-cell>
+        <mat-cell *matCellDef="let news">
+            News Details
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

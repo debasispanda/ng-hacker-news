@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    app-news-table {
+        display: block;
+        overflow-y: auto;
+    }
+    app-news-timeline {
+        display: block;
+        height: 400px;
+    }
+}

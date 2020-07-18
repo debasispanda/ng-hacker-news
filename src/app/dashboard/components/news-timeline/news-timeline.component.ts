@@ -82,5 +82,6 @@ export class NewsTimelineComponent implements OnChanges {
     this.dataSet.labels = res.map(d => d.objectID);
     this.dataSet.datasets[0].data = res.map(d => d.points);
     this.chart.update();
+    this.chart.resize();
   }
 }

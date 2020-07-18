@@ -3,3 +3,4 @@
 <span *ngIf="news?.author" class="news-by">by</span>
 {{news?.author}}
 <span class="news-created"> {{news?.created_at | timeSince}} </span>
+<span class="news-hide" (click)="onHideNews(news.objectID)"><span>[</span> hide <span>]</span></span>

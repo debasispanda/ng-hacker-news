@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges, OnChanges } from '@angular/core';
+import { Component, Input, SimpleChanges, OnChanges, Output, EventEmitter } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { News } from '../../models/news';
 
@@ -11,6 +11,8 @@ export class NewsTableComponent implements OnChanges {
 
   @Input() data: News[];
 
+  @Output() hideNews: EventEmitter<number> = new EventEmitter();
+
   public displayedColumns = ['num_comments', 'points', 'icon', 'title'];
 
   public dataSource: MatTableDataSource<News> = new MatTableDataSource();
@@ -21,6 +23,10 @@ export class NewsTableComponent implements OnChanges {
     if (data.currentValue && data.currentValue.length > 0) {
       this.dataSource.data = data.currentValue;
     }
+  }
+
+  public onHideNews(newsId) {
+    this.hideNews.emit(newsId);
   }
 
 }

@@ -16,4 +16,8 @@ export class NewsDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public onHideNews(id) {
+    this.hideNews.emit(id);
+  }
+
 }

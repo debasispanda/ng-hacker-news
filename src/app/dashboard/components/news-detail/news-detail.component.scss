@@ -1,0 +1,18 @@
+.news-title {
+    font-size: 18px;
+}
+
+.news-url, .news-created {
+    color: #808080;
+}
+
+.news-by {
+    color: #c0c0c0;
+}
+
+.news-hide {
+    cursor: pointer;
+    span {
+        color: #808080;
+    }
+}

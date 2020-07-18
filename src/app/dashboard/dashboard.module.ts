@@ -10,10 +10,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { NewsService } from './services';
 import { NewsTimelineComponent } from './components/news-timeline/news-timeline.component';
+import { NewsDetailComponent } from './components/news-detail/news-detail.component';
+import { TimeSincePipe } from './pipes/time-since.pipe';
+import { UrlHostnamePipe } from './pipes/url-hostname.pipe';
 
 
 @NgModule({
-  declarations: [DashboardComponent, NewsTableComponent, NewsTimelineComponent],
+  declarations: [DashboardComponent, NewsTableComponent, NewsTimelineComponent, NewsDetailComponent, TimeSincePipe, UrlHostnamePipe],
   imports: [
     CommonModule,
     HttpClientModule,

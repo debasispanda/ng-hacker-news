@@ -1,8 +1,8 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-html,
-body {
+html, body, app-root {
+  height: 100%;
+  display: block;
   margin: 0;
   padding: 0;
-  height: 100%;
 }

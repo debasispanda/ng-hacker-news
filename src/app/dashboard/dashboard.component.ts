@@ -58,6 +58,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
     }));
   }
 
+  public onUpvoteNews(news) {
+    const { objectID, points } = news;
+    this.subscriptions.set('upvoteNews', this.newsService.upvoteNews(objectID, points + 1).subscribe(res => {
+      this.newsData = this.newsData.map(item => {
+        const newPoints = res.get(item.objectID)?.points;
+        return newPoints ? { ...item, points: newPoints } : item;
+      });
+    }));
+  }
+
   ngOnDestroy() {
     if (this.subscriptions.size > 0) {
       for (const key of Array.from(this.subscriptions.keys())) {

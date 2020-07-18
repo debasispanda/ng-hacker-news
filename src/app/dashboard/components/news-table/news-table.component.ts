@@ -13,6 +13,8 @@ export class NewsTableComponent implements OnChanges {
 
   @Output() hideNews: EventEmitter<number> = new EventEmitter();
 
+  @Output() upvoteNews: EventEmitter<number> = new EventEmitter();
+
   public displayedColumns = ['num_comments', 'points', 'icon', 'title'];
 
   public dataSource: MatTableDataSource<News> = new MatTableDataSource();
@@ -27,6 +29,10 @@ export class NewsTableComponent implements OnChanges {
 
   public onHideNews(newsId) {
     this.hideNews.emit(newsId);
+  }
+
+  public onUpvoteNews(news) {
+    this.upvoteNews.emit(news);
   }
 
 }

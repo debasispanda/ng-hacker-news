@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'news/0'
+    redirectTo: 'news'
   }
 ];
 

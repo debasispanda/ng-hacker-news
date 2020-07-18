@@ -51,6 +51,13 @@ export class DashboardComponent implements OnInit, OnDestroy {
         ));
   }
 
+  public onHideNews(newsId) {
+    this.subscriptions.set('hideNews', this.newsService.hideNews(newsId).subscribe(res => {
+      const hiddenIds = res.filter(item => item.hidden).map(item => item.objectID);
+      this.newsData = this.newsData.filter(item => !hiddenIds.includes(item.objectID));
+    }));
+  }
+
   ngOnDestroy() {
     if (this.subscriptions.size > 0) {
       for (const key of Array.from(this.subscriptions.keys())) {

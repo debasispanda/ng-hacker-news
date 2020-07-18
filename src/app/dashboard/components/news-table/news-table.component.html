@@ -2,13 +2,13 @@
     <!-- Comments Column -->
     <ng-container matColumnDef="num_comments">
         <mat-header-cell *matHeaderCellDef> Comments </mat-header-cell>
-        <mat-cell *matCellDef="let news"> {{news.num_comments}} </mat-cell>
+        <mat-cell *matCellDef="let news"> {{news.num_comments || '-'}} </mat-cell>
     </ng-container>
 
     <!-- Vote Count Column -->
     <ng-container matColumnDef="points">
         <mat-header-cell *matHeaderCellDef> Vote Count </mat-header-cell>
-        <mat-cell *matCellDef="let news"> {{news.points}} </mat-cell>
+        <mat-cell *matCellDef="let news"> {{news.points || '-'}} </mat-cell>
     </ng-container>
 
     <!-- Upvote Column -->

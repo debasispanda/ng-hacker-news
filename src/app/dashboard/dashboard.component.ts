@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NewsService } from './services/news.service';
 import { News } from './models/news';
 import { Subscription } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { switchMap, map, tap } from 'rxjs/operators';
 
 @Component({
@@ -10,7 +10,7 @@ import { switchMap, map, tap } from 'rxjs/operators';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
   public newsData: News[] = [];
 
@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
   public currentPage = 0;
 
   public totalPages = 0;
+
+  public loading = false;
 
   constructor(
     private newsService: NewsService,
@@ -29,13 +31,32 @@ export class DashboardComponent implements OnInit {
     this.subscriptions.set('loadNews',
       this.route.params
         .pipe(
-          map(param => param.id ? +param.id : 0),
-          tap(page => this.currentPage = page),
+          map(({ page }) => page ? +page : 0),
+          tap(page => {
+            this.loading = true;
+            this.currentPage = page;
+          }),
           switchMap(page => this.newsService.getNews(page))
         )
-        .subscribe((res: any) => {
-          this.newsData = res.hits as News[];
-        }));
+        .subscribe(
+          (res: any) => {
+            this.newsData = res.hits as News[];
+            this.totalPages = res.nbPages;
+            this.loading = false;
+          },
+          error => {
+            console.error(error);
+            this.loading = false;
+          }
+        ));
+  }
+
+  ngOnDestroy() {
+    if (this.subscriptions.size > 0) {
+      for (const key of Array.from(this.subscriptions.keys())) {
+        this.subscriptions.get(key).unsubscribe();
+      }
+    }
   }
 
 }

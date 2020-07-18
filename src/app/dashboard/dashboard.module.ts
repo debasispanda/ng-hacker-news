@@ -9,10 +9,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { NewsService } from './services';
+import { NewsTimelineComponent } from './components/news-timeline/news-timeline.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, NewsTableComponent],
+  declarations: [DashboardComponent, NewsTableComponent, NewsTimelineComponent],
   imports: [
     CommonModule,
     HttpClientModule,

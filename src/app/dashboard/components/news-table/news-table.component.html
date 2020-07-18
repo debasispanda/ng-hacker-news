@@ -25,7 +25,7 @@
     <ng-container matColumnDef="title">
         <mat-header-cell *matHeaderCellDef> News Details </mat-header-cell>
         <mat-cell *matCellDef="let news">
-            News Details
+            <app-news-detail [news]="news"></app-news-detail>
         </mat-cell>
     </ng-container>
 

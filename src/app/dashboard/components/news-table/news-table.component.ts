@@ -9,23 +9,11 @@ import { News } from '../../models/news';
 })
 export class NewsTableComponent implements OnChanges {
 
-  @Input() totalPages: number;
-
-  @Input() currentPage: number;
-
   @Input() data: News[];
 
   public displayedColumns = ['num_comments', 'points', 'icon', 'title'];
 
   public dataSource: MatTableDataSource<News> = new MatTableDataSource();
-
-  public get isFirstPage(): boolean {
-    return this.currentPage === 0;
-  }
-
-  public get isLastPage(): boolean {
-    return this.totalPages <= (this.currentPage + 1);
-  }
 
   constructor() { }
 

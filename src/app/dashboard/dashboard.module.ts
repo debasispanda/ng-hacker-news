@@ -13,16 +13,29 @@ import { NewsTimelineComponent } from './components/news-timeline/news-timeline.
 import { NewsDetailComponent } from './components/news-detail/news-detail.component';
 import { TimeSincePipe } from './pipes/time-since.pipe';
 import { UrlHostnamePipe } from './pipes/url-hostname.pipe';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
-  declarations: [DashboardComponent, NewsTableComponent, NewsTimelineComponent, NewsDetailComponent, TimeSincePipe, UrlHostnamePipe],
+  declarations: [
+    DashboardComponent,
+    NewsTableComponent,
+    NewsTimelineComponent,
+    NewsDetailComponent,
+    TimeSincePipe,
+    UrlHostnamePipe,
+    PaginationComponent
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
     MatTableModule,
     MatButtonModule,
     MatIconModule,
+    MatToolbarModule,
+    MatProgressBarModule,
     DashboardRoutingModule
   ],
   providers: [NewsService]

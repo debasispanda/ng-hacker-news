@@ -13,7 +13,7 @@
     "serve:ssr": "node dist/hacker-news/server/main.js",
     "build:ssr": "ng build --prod && ng run hacker-news:server:production",
     "prerender": "ng run hacker-news:prerender",
-    "postinstall": "npm run build:ssr"
+    "heroku-postbuild": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { NewsTableComponent } from './components/news-table/news-table.component';
-import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,7 +29,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
     MatTableModule,
     MatButtonModule,
     MatIconModule,

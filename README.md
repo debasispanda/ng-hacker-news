@@ -1,8 +1,8 @@
 [![CircleCI](https://circleci.com/gh/debasispanda/hacker-news/tree/master.svg?style=shield)](https://circleci.com/gh/debasispanda/workflows/hacker-news/tree/master)
 
-# HackerNews
+# Hacker News
 
-![News Hacker Dashboard](./docs/resource/screen-shot.jpg)
+![News Hacker Dashboard](./docs/resource/dashboard.jpg)
 
 Demo: [ng-hacker-news](https://ng-hacker-news.herokuapp.com)
 

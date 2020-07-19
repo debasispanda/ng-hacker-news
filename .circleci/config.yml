@@ -18,7 +18,6 @@ jobs:
             - "nodes_modules"
       - run: npm run lint
       - run: npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-      - run: npm run build:ssr
 workflows:
     build-test-and-deploy:
       jobs:

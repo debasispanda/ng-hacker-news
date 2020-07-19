@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://ng-hacker-news.herokuapp.com/sitemap.xml

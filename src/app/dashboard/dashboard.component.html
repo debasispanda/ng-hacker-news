@@ -1,4 +1,7 @@
-<app-news-table [data]="newsData" (hideNews)="onHideNews($event)" (upvoteNews)="onUpvoteNews($event)"></app-news-table>
-<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
-<app-pagination [totalPages]="totalPages" [currentPage]="currentPage"></app-pagination>
-<app-news-timeline [data]="newsData"></app-news-timeline>
+<main>
+    <app-news-table [data]="newsData" (hideNews)="onHideNews($event)" (upvoteNews)="onUpvoteNews($event)">
+    </app-news-table>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+    <app-pagination [totalPages]="totalPages" [currentPage]="currentPage"></app-pagination>
+    <app-news-timeline [data]="newsData"></app-news-timeline>
+</main>

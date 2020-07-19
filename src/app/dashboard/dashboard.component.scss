@@ -1,14 +1,21 @@
 :host {
+  display: block;
+  height: 100%;
+
+  main {
     display: flex;
     flex-direction: column;
     height: 100%;
+
     app-news-table {
-        display: block;
-        overflow-y: auto;
-        flex: 4;
+      display: block;
+      overflow-y: auto;
+      flex: 4;
     }
+
     app-news-timeline {
-        display: block;
-        flex: 2;
+      display: block;
+      flex: 2;
     }
+  }
 }

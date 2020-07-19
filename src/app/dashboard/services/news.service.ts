@@ -14,7 +14,13 @@ export class NewsService {
       switchMap((res: any) => {
         return this.store.fetchAll().pipe(map(news => {
           const ids = Array.from(news.values()).filter(d => d.hidden).map(d => d.objectID);
-          const hits = res.hits.filter(item => !ids.includes(item.objectID));
+          const hits = res.hits.filter(item => !ids.includes(item.objectID)).map(data => {
+            const points = news.get(data.objectID)?.points;
+            if (points) {
+              return { ...data, points };
+            }
+            return data;
+          });
           return { ...res, hits };
         }));
       })
@@ -23,5 +29,9 @@ export class NewsService {
 
   public hideNews(objectID: number) {
     return this.store.save(objectID, { hidden: true }).pipe(map(items => Array.from(items.values())));
+  }
+
+  public upvoteNews(objectID: number, points: number) {
+    return this.store.save(objectID, { points });
   }
 }

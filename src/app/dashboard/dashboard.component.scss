@@ -5,9 +5,10 @@
     app-news-table {
         display: block;
         overflow-y: auto;
+        flex: 4;
     }
     app-news-timeline {
         display: block;
-        height: 300px;
+        flex: 2;
     }
 }

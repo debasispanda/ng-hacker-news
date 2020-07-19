@@ -6,11 +6,18 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    border-bottom: 8px solid #f60;
+    box-sizing: border-box;
 
     app-news-table {
       display: block;
       overflow-y: auto;
       flex: 4;
+    }
+
+    app-pagination {
+      border-bottom: 4px solid #f60;
+      box-sizing: border-box;
     }
 
     app-news-timeline {

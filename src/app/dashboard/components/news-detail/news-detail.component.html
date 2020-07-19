@@ -1,5 +1,5 @@
 <span class="news-title">{{news?.title}}</span>
-<span *ngIf="news?.url" class="news-url"> ({{news?.url | urlHostname}}) </span>
+<a *ngIf="news?.url" class="news-url" [href]="news.url" target="_blank"> ({{news.url | urlHostname}}) </a>
 <span *ngIf="news?.author" class="news-by">by</span>
 {{news?.author}}
 <span class="news-created"> {{news?.created_at | timeSince}} </span>

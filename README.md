@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/debasispanda/hacker-news/tree/master.svg?style=shield)](https://circleci.com/gh/debasispanda/workflows/hacker-news/tree/master)
+[![CircleCI](https://circleci.com/gh/debasispanda/ng-hacker-news/tree/master.svg?style=shield)](https://circleci.com/gh/debasispanda/workflows/hacker-news/tree/master)
 
 # Hacker News
 
